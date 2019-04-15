@@ -1,0 +1,377 @@
+@import "fonts"
+@import "libs"
+@import "base"
+@import "vars"
+
+
+body
+  margin: 0 0
+
+
+/*Make element displaying in grid */
+.grid
+  display: grid
+
+.centered-content
+  justify-content: center
+
+.page
+  grid-template-columns: 15vw 83vw
+  grid-template-rows: auto
+  grid-template-areas: "aside page1" "aside page2" "aside page3"
+  background-position: center
+
+
+aside
+  background: #fff
+  min-width: 200px
+  width: 15%
+  height: 100vh
+  grid-area: aside
+  grid-template-rows: 1fr 1fr 2fr
+  grid-gap: 5%
+  position: fixed
+  box-shadow: 8px 0 1px 1px rgba(68,68,68,0.05)
+
+  //#burger-menu
+  //  display: none
+  //  ul
+  //    display: none
+  //  :active
+  //    display: block
+
+  .aside-logo
+    margin-top: $vertical-gap
+    width: 192px
+    height: 108px
+    min-width: 200px
+    background: url("../img/logo-header.png") no-repeat
+    margin-left: 10%
+    margin-right: 10%
+
+  #burger-menu
+    .burger-button
+      display: none
+      width: 60px
+      justify-self: end
+      height: 30px
+      span
+        display: block
+        background: #000
+        width: 60px
+        height: 6px
+        margin: 8px
+      span:nth-child(3)
+        width: 20px
+        justify-self: end
+
+
+    .aside-menu
+      nav
+        display: grid
+        font-size: 16px
+        font-family: ProximaNovaLight
+        li
+          list-style-type: none
+          a
+            text-decoration: none
+            text-transform: uppercase
+            line-height: 2
+            color: #1d3031
+
+    .act
+      display: grid
+      height: auto
+      background: #fff
+      box-shadow: 8px 8px 8px 0px rgba(68, 68, 68, 0.5)
+      margin-top: 8%
+      width: 250px
+      justify-self: end
+      margin-top: -1vh
+
+  .contact-links
+    margin-bottom: 15%
+    .social-links
+      grid-template-columns: repeat(3, 1fr)
+      grid-column-start: 1
+      grid-column-end: 4
+      grid-gap: 30px
+      justify-items: center
+      justify-self: center
+      font-size: 2vw
+      margin: 0% 12% 10% 10%
+
+      a:nth-child(1)
+        color: #1559b0
+      a:nth-child(2)
+        color: #55acee
+      a:nth-child(3)
+        color: #de2925
+
+.contact-button
+  grid-column-start: 1
+  grid-column-end: 4
+  display: inline-block
+  border: none
+  color: #fff
+  text-decoration: none
+  background-color: $accent
+  padding: 10px 30px
+  font-size: 10px
+  border-radius: 2px
+  text-align: center
+  position: relative
+  outline: none
+  transition: background-color .1s ease
+  cursor: pointer
+  height: 40px
+  font-family: ProximaNovaLight
+  margin-left: 5%
+  margin-right: 5%
+  margin-bottom: 15%
+  &::after
+    transition: background-color .2s ease
+    position: absolute
+    content: ''
+    height: 4px
+    bottom: 0
+    width: 100%
+    background-color: darken($accent, 50%)
+    opacity: .18
+    border-bottom-left-radius: 2px
+    border-bottom-right-radius: 2px
+    left: 0
+  a
+    text-transform: uppercase
+    text-decoration: none
+    color: white
+
+.slider
+  height: 858px
+  grid-area: page1
+  .slide-content
+    margin: 24% 8%
+    width: 54%
+    h2
+      font-size: 56px
+      align-self: end
+      font-family: ProximaNovaExtrabld
+      text-transform: uppercase
+      line-height: 1
+      margin-bottom: 3%
+    span
+      background: $accent
+      height: 15px
+      box-sizing: content-box
+
+main
+  background: url("../img/background-icon.png") no-repeat
+  background-position: center
+  grid-area: page2
+  width: 95%
+  justify-self: center
+
+
+.services-section
+  justify-content: center
+  grid-template-columns: repeat(3, minmax(20%, 25vw))
+  margin-left: $main-gap
+  margin-right: $main-gap
+  grid-gap: 3%
+  margin-top: -3%
+  min-height: 53px
+
+  .service-block
+    height: 267px
+  .text-wrapper
+    justify-self: center
+    margin: 7% 15%
+    h4
+      font-size: 32px
+      font-weight: bold
+      color: #fff
+      text-transform: uppercase
+      margin-top: 0pt
+      margin-bottom: 5pt
+      font-family: ProximaNovaBlack
+    span
+      color: #fff
+      font-size: 20px
+      font-family: ProximaNovaRegular
+
+%h3-style
+  text-transform: uppercase
+  font-size: 56px
+  border-bottom: 15px solid black
+  margin-top: 0pt
+  margin-bottom: 5pt
+  font-family: ProximaNovaBlack
+  line-height: 1
+
+.our-rewards
+  grid-template-columns: 1fr 1fr
+  padding: 50px
+  justify-self: center
+  width: 95%
+  grid-gap: 40px
+  .rewards
+    margin: 10% 0%
+  img
+    display: block
+    width: 85%
+    margin-left: 7%
+
+  .trusted
+    padding-right: 20%
+    h3
+      @extend %h3-style
+    span
+      font-size: 24px
+      width: 78%
+      display: block
+      font-family: ProximaNovaLight
+      margin: 6% 0%
+
+.button-more
+  @extend .contact-button
+  font-family: ProximaNovaBold
+
+
+.art-wrapper
+  grid-template-columns: 1fr 1fr
+
+.articles-section
+  margin-left: $main-gap
+  margin-right: $main-gap
+  justify-self: center
+  width: 90%
+  h3
+    @extend %h3-style
+    width: 40%
+    margin-bottom: 2%
+  span
+    color: #aba3a3
+    text-transform: uppercase
+    text-decoration: underline
+    font-size: 24px
+    font-family: ProximaNovaLight
+
+  .articles-block
+    margin-left: 2%
+
+  .articles-block, .news-block
+    grid-row-gap: 10px
+
+  .art-item
+    grid-template-columns: 1fr 2fr
+    width: 97%
+    border-bottom: 15px solid #ccc
+    background: #e2e9ea
+    margin-bottom: 2%
+  .art-img
+    img
+      height: 18vw
+      width: 18vw
+      background-size: cover
+      background-position: center
+      display: block
+      object-fit: cover
+  .art-content
+    margin-right: 15%
+    margin-left: 10%
+    margin-top: 15%
+    .art-category
+      background: #008bdb
+      text-decoration: none
+      color: #fff
+      padding: 1% 3%
+      font-family: ProximaNovaLight
+      font-size: 16px
+    .art-title
+      text-decoration: none
+      color: #000
+      font-family: ProximaNovaRegular
+      font-size: 24px
+
+
+/*======================footer======================*/
+footer
+  grid-area: page3
+  margin: 1% 6%
+  h3
+    @extend %h3-style
+    width: 26%
+    line-height: 1.5
+
+  .footer-wrapper
+    grid-template-columns: 1fr 1fr
+
+    .foot-left
+      p
+        font-size: 32px
+        font-family: ProximaNovaBlack
+        text-transform: uppercase
+
+    .foot-right
+      text-transform: uppercase
+      text-decoration: none
+      color: #a3a3a3
+      justify-self: end
+      width: 45%
+      font-size: 16px
+      font-family: ProximaNovaLight
+
+    .foot-copyElements
+      grid-template-columns: 2fr 1fr
+      margin-top: 10%
+    .foot-copy
+      span
+        color: #de6e73
+        text-transform: none
+        font-size: 12px
+        font-family: ProximaNovaRegular
+      .doris-brand
+        background: url("../img/doris-brand.png") no-repeat
+        width: 120px
+        height: 40px
+      p
+        text-transform: uppercase
+        color: #a3a3a3
+        font-size: 16px
+        font-family: ProximaNovaLight
+    .foot-logo
+      background: url("../img/husky-logo.png") no-repeat
+      width: 100px
+      height: 60px
+      align-self: center
+
+  .search-form
+    input
+      width: 100%
+      height: 1.5vw
+      background: #d6eefe
+      outline: none
+      border: none
+      padding-right: 1%
+    button
+      color: #6b777f
+      border: none
+      background: none
+      outline: none
+      margin-top: -1.5%
+      z-index: 1
+      position: absolute
+      font-size: 1vw
+      margin-left: 15%
+      display: block
+
+  .underlined
+    text-decoration: underline
+    color: #a3a3a3
+
+@import "media"
+
+
+
+
+
