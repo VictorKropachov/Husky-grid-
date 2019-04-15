@@ -1,0 +1,93 @@
+@import "../libs/font-awesome/css/font-awesome.min.css";
+
+main {
+    margin-top: 10%;
+    background-size: contain;
+}
+
+.contact-container {
+    grid-template-columns: 45% 45%;
+    grid-gap: 5%;
+    width: 90%;
+    justify-self: center;
+}
+
+.contact-form{
+    justify-self: center;
+    align-self: center;
+    grid-row-gap: 15px;
+    width: 95%;
+}
+
+.contact-form input{
+    width: 100%;
+    height: 7vh;
+    min-height: 30px;
+    border: none;
+    outline: none;
+    background: #d6eefe;
+}
+
+.contact-form textarea{
+    max-width: 100%;
+    border: none;
+    outline: none;
+    background: #d6eefe;
+}
+
+.contact-form button{
+    width: 50%;
+    height: 7vh;
+    min-height: 30px;
+    justify-self: end;
+    text-transform: uppercase;
+    border: none;
+    background: #d02d34;
+    color: #fff;
+    font-family: ProximaNovaRegular;
+}
+
+
+h3{
+    text-transform: uppercase;
+    font-size: 56px;
+    border-bottom: 15px solid black;
+    margin-top: 0pt;
+    margin-bottom: 5pt;
+    font-family: ProximaNovaBlack;
+    line-height: 1;
+}
+
+p{
+    font-size: 32px;
+    font-family: ProximaNovaBlack;
+    text-transform: uppercase;
+}
+
+
+iframe {
+    width: 80vw;
+    height: 35vw;
+    justify-self: center
+}
+
+/* Large Devices, Wide Screens  1280px-1705px */
+@media only screen and (max-width : 1795px){
+    h3 { font-size: 42px }
+    p { font-size: 20px }
+
+}
+
+@media only screen and (max-width : 1281px){
+    h3 { font-size: 30px }
+    p { font-size: 20px }
+
+    iframe {
+        width: 93.1vw;
+        height: 40vw;
+        justify-self: center
+    }
+
+
+
+}
